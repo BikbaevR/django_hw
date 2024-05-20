@@ -1,0 +1,3 @@
+https://github.com/BikbaevR/django_cw/tree/master/4__13_05_2024/cw
+
+В задании говориться о связи many to many но мы ее не прошли
