@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.task{
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: rgb(92, 46, 44);
+    color: rgb(238, 238, 238);
+}
+.button{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    width: max-content;
+}
+.done{
+    background-color: rgb(61, 126, 59);
+}
+.delete{
+    background-color: rgb(177, 79, 79);
+}
+.button__block{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.task__description{
+    overflow: hidden;
+}
+
+.is_done{
+    background-color: rgb(44, 92, 44);
+}
+.is_not_done{
+    background-color: rgb(92, 46, 44);
+}

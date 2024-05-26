@@ -1,0 +1,68 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        {% for task in tasks %}
+            {% if task.is_done %}
+                <div class="task is_done">
+                    <div class="task__title">
+                        <span class="title">{{task.id}}. {{task.title}}</span>
+                    </div>
+                    <div class="task__description">
+                        <p class="description">{{task.description}}</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="button__block">
+                            {% if task.is_done == False %}
+                                <a class="button done" href="{% url 'done' task_id=task.id %}">Выполнить</a>
+                            {% else %}
+                                <a class="button done" href="{% url 'un_done' task_id=task.id %}">Отменить выполнение</a>
+                            {% endif %}
+                        </div>
+                        <div class="button__block">
+                            <a class="button delete" href="{% url 'delete' task_id=task.id %}">Удалить</a>
+                        </div>
+
+                    </div>
+                </div>
+            {% else %}
+                <div class="task is_not_done">
+                    <div class="task__title">
+                        <span class="title">{{task.id}}. {{task.title}}</span>
+                    </div>
+                    <div class="task__description">
+                        <p class="description">{{task.description}}</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="button__block">
+                            {% if task.is_done == False %}
+                                <a class="button done" href="{% url 'done' task_id=task.id %}">Выполнить</a>
+                            {% else %}
+                                <a class="button done" href="{% url 'un_done' task_id=task.id %}">Отменить выполнение</a>
+                            {% endif %}
+                        </div>
+                        <div class="button__block">
+                            <a class="button delete" href="{% url 'delete' task_id=task.id %}">Удалить</a>
+                        </div>
+
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+
+
+</body>
+</html>
